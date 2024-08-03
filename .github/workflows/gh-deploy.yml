@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: aws s3 sync ./dist/pershu-com s3://www.preshu.com --delete
+        run: aws s3 sync ./dist/live-cv s3://www.preshu.com --delete
