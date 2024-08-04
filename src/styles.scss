@@ -1,2 +1,6 @@
 @import url('../node_modules/bulma/bulma.scss');
 @import url('../node_modules/iconoir/css/iconoir.css');
+
+:root{
+  --bulma-primary: hsl(235, 49%, 56%);
+}
