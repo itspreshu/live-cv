@@ -8,5 +8,5 @@ export const routes: Routes = [
     redirectTo: '/about',
     pathMatch: 'full'
   },
-  {path: 'about', component: AboutMeComponent}
+  {path: 'about', component: AboutMeComponent},
 ];
