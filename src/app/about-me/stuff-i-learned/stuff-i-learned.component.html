@@ -1,13 +1,8 @@
 <section class="section content">
   <h1 class="title">Skills</h1>
   <div class="columns is-centered">
-    <div class="column box content">
+    <div class="column box content skill-box">
       <app-skill-descriptor *ngFor="let skill of skills" [title]="skill.title" [level]="skill.level" [icon]="skill.icon"></app-skill-descriptor>
-    </div>
-    <div class="column">
-      <figure class="is-1by1 image">
-        <img ngSrc="assets/ai-mage.webp" alt="AI generated mage" height="1024" width="1024">
-      </figure>
     </div>
   </div>
 </section>

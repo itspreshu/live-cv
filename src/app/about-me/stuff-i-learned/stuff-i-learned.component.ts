@@ -20,15 +20,15 @@ export class StuffILearnedComponent {
     icon: 'code-brackets'
   },{
     title: "Java",
-    level: 70,
+    level: 85,
     icon: 'coffee-cup'
   },{
     title: "C#",
-    level: 75,
+    level: 85,
     icon: 'code-brackets-square'
   },{
     title: "AWS",
-    level: 50,
+    level: 70,
     icon: 'cloud'
   },{
     title: "CI/CD",
@@ -40,7 +40,7 @@ export class StuffILearnedComponent {
     icon: 'code-brackets-square'
   },{
     title: "Gradle",
-    level: 65,
+    level: 70,
     icon: 'coffee-cup'
   },{
     title: "Unity",
@@ -50,5 +50,17 @@ export class StuffILearnedComponent {
     title: "BBDD",
     level: 60,
     icon: 'database'
+  }, {
+    title: "Angular",
+    level: 85,
+    icon: 'app-window'
+  }, {
+    title: "Docker",
+    level: 75,
+    icon: 'box-iso'
+  }, {
+    title: "Kubernetes",
+    level: 70,
+    icon: 'color-wheel'
   }]
 }
