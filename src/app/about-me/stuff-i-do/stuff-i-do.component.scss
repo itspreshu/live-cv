@@ -1,14 +1,15 @@
-.content{
-  margin-top: 1rem;
+.section-block {
+  margin-bottom: 3.5rem;
 }
 
-.columns{
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-.skill {
-  @media (min-width: 768px) {
-    max-width: 400px;
+@media (max-width: 960px) {
+  .capability-grid {
+    grid-template-columns: 1fr;
   }
-  margin: 0;
 }
-

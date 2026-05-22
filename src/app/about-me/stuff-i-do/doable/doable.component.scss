@@ -1,7 +1,42 @@
-.main-icon{
+.main-icon {
   font-size: 3rem;
 }
-.box{
-  min-height: 270px;
+
+.capability-card {
+  height: 100%;
+  min-height: 260px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
+.card-icon {
+  display: inline-flex;
+  margin-bottom: 1.2rem;
+  color: var(--accent-strong);
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 177, 92, 0.28);
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.capability-card:hover .card-icon {
+  transform: translateY(-4px) scale(1.04);
+  color: var(--accent);
+}
+
+h3 {
+  margin: 0 0 0.8rem;
+  color: var(--text-main);
+  font-size: 1.4rem;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.75;
+}

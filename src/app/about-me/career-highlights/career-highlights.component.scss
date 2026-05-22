@@ -1,0 +1,60 @@
+.highlights-section {
+  margin-bottom: 3.5rem;
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card,
+.point-card {
+  height: 100%;
+  padding: 1.4rem;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.stat-card:hover,
+.point-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(131, 226, 176, 0.24);
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.stat-card h3,
+.point-card h3 {
+  margin: 0 0 0.7rem;
+  color: var(--text-main);
+}
+
+.stat-card h3 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1;
+}
+
+.stat-card p,
+.point-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.point-card h3 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 960px) {
+  .stats-strip,
+  .points-grid {
+    grid-template-columns: 1fr;
+  }
+}

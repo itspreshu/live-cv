@@ -1,32 +1,139 @@
-.screenshot{
-  max-width: 300px;
-  margin: auto;
+.projects-section {
+  margin-bottom: 3.5rem;
 }
 
-.brockey{
-  padding-top: 1rem;
-  border-radius: 0.5rem;
-  background-size: cover !important;
-  background: url("../../../assets/brockey_shot_blur.png");
-  p{
-    padding: 1rem;
-    border-radius: 0.5rem;
-    color: white;
+.project-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(290px, 0.75fr);
+  gap: 1rem;
+}
+
+.featured-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.95fr);
+  gap: 1.4rem;
+  align-items: center;
+  padding: 1.6rem;
+  transition: transform 240ms ease, border-color 240ms ease;
+}
+
+.featured-project:hover {
+  transform: translateY(-8px);
+  border-color: rgba(131, 226, 176, 0.26);
+}
+
+.project-copy h3,
+.release-card h3 {
+  margin: 0 0 0.9rem;
+  color: var(--text-main);
+  font-size: 1.6rem;
+  line-height: 1.18;
+}
+
+.project-copy p,
+.release-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.project-label {
+  margin-bottom: 0.9rem !important;
+  color: var(--accent-strong) !important;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.project-tags span {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(145, 196, 255, 0.16);
+  border-radius: 999px;
+  color: var(--text-main);
+  font-size: 0.86rem;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.project-tags span:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 177, 92, 0.28);
+}
+
+.project-shot {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(145, 196, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+  transform: rotate(-1.2deg);
+  transition: transform 260ms ease;
+}
+
+.project-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.featured-project:hover .project-shot {
+  transform: rotate(0deg) translateY(-2px);
+}
+
+.featured-project:hover .project-shot img {
+  transform: scale(1.04);
+}
+
+.project-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.release-card {
+  padding: 1.4rem;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.release-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 177, 92, 0.24);
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(131, 226, 176, 0.18), rgba(255, 177, 92, 0.18));
+  border: 1px solid rgba(131, 226, 176, 0.3);
+  color: var(--text-main);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.download-link:hover,
+.download-link:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.release-note {
+  margin-top: 1rem !important;
+  color: var(--text-main) !important;
+}
+
+@media (max-width: 960px) {
+  .project-layout,
+  .featured-project {
+    grid-template-columns: 1fr;
   }
-}
-
-.windows{
-  font-size: 2rem;
-}
-
-.platform{
-  margin: 1rem !important;
-}
-
-.button{
-  color: white;
-}
-
-.big{
-  font-size: 2rem;
 }

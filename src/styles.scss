@@ -1,15 +1,184 @@
 @import url('../node_modules/bulma/bulma.scss');
 @import url('../node_modules/iconoir/css/iconoir.css');
 
-:root{
-  --bulma-primary: #2e7bc7;
+:root {
+  --page-bg: #07131f;
+  --page-bg-soft: #0d2233;
+  --surface: rgba(12, 26, 39, 0.78);
+  --surface-strong: rgba(17, 36, 52, 0.96);
+  --surface-border: rgba(145, 196, 255, 0.18);
+  --text-main: #e9f3ff;
+  --text-soft: #9cb8cf;
+  --accent: #83e2b0;
+  --accent-strong: #ffb15c;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --bulma-primary: #83e2b0;
 }
 
-html{
-  background-size: auto;
-  background: linear-gradient(135deg, #1f3e50, #0d2033, #114c2b);
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.box{
-  background-color: rgba(255, 255, 255, 0.1) !important;
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes drift-orb {
+  0%,
+  100% {
+    transform: translate3d(-2%, -2%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(3%, 2%, 0) scale(1.08);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(131, 226, 176, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 24px rgba(131, 226, 176, 0.16);
+  }
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, rgba(131, 226, 176, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 177, 92, 0.12), transparent 24%),
+    linear-gradient(160deg, #07131f 0%, #0d2233 48%, #10271f 100%);
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text-main);
+  font-family: 'Space Grotesk', sans-serif;
+  background: transparent;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 10vh;
+  right: -10vw;
+  width: 42vw;
+  height: 42vw;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(131, 226, 176, 0.1), transparent 62%);
+  filter: blur(18px);
+  pointer-events: none;
+  animation: drift-orb 18s ease-in-out infinite;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.box {
+  background: var(--surface) !important;
+  border: 1px solid var(--surface-border);
+  border-radius: 28px !important;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-kicker::before {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.8rem;
+  color: var(--text-main);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+@supports (animation-timeline: view()) {
+  .section-heading,
+  .section-block,
+  .highlights-section,
+  .projects-section,
+  .contact-section {
+    animation: fade-up 700ms ease both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

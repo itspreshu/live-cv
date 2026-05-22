@@ -1,4 +1,12 @@
-.content{
-  max-width: 1920px;
-  margin: auto;
+.page-shell {
+  width: min(1180px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    width: calc(100vw - 1.5rem);
+    padding-top: 1.2rem;
+  }
 }
