@@ -1,3 +1,12 @@
-a{
-  color: #2e7bc7;
+.footer {
+  padding-top: 0;
+  background: transparent;
+}
+
+.footer-content p {
+  color: var(--text-soft);
+}
+
+a {
+  color: var(--accent);
 }

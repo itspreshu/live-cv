@@ -1,12 +1,291 @@
-.profile-image{
-  max-width: 300px;
-  margin:auto;
-  > * {
-    object-fit: cover;
+.hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.9fr);
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem 0 3.5rem;
+  padding: 2rem;
+  overflow: hidden;
+  animation: fade-up 820ms ease both;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: clamp(2.7rem, 6vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.hero-summary {
+  max-width: 62ch;
+  margin: 1.4rem 0 0;
+  color: var(--text-soft);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.hero-copy > * {
+  opacity: 0;
+  animation: fade-up 720ms ease forwards;
+}
+
+.hero-copy > :nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.hero-copy > :nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.hero-copy > :nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.hero-copy > :nth-child(4) {
+  animation-delay: 320ms;
+}
+
+.hero-copy > :nth-child(5) {
+  animation-delay: 420ms;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid rgba(145, 196, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.hero-link:hover,
+.hero-link:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(131, 226, 176, 0.4);
+}
+
+.hero-link-primary {
+  background: linear-gradient(135deg, rgba(131, 226, 176, 0.2), rgba(255, 177, 92, 0.18));
+  border-color: rgba(131, 226, 176, 0.4);
+}
+
+.hero-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.2rem;
+}
+
+.hero-points article {
+  padding: 1rem;
+  border: 1px solid rgba(145, 196, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.hero-points article:hover {
+  transform: translateY(-6px);
+  border-color: rgba(131, 226, 176, 0.26);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-points span {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-points p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.portrait-column {
+  display: grid;
+  gap: 1rem;
+  animation: fade-up 860ms ease both 260ms;
+}
+
+.portrait-frame {
+  position: relative;
+  padding: 0.85rem;
+  border: 1px solid rgba(145, 196, 255, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top, rgba(131, 226, 176, 0.18), transparent 44%),
+    rgba(255, 255, 255, 0.03);
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.portrait-meta {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 2;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgba(145, 196, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(7, 19, 31, 0.82);
+  color: rgba(233, 243, 255, 0.82);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.profile-image {
+  margin: auto;
+  transition: transform 260ms ease;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(145, 196, 255, 0.14);
+}
+
+.profile-photo {
+  max-width: 332px;
+  aspect-ratio: 4 / 5;
+}
+
+.profile-image > * {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-photo img {
+  object-position: center 16%;
+}
+
+.portrait-frame:hover .profile-image {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.portrait-frame:hover .portrait-meta {
+  transform: translateY(-3px);
+  border-color: rgba(131, 226, 176, 0.3);
+}
+
+.pixel-badge {
+  position: absolute;
+  left: 0.95rem;
+  bottom: 0.95rem;
+  width: 82px;
+  height: 82px;
+  padding: 0.4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(145, 196, 255, 0.18);
+  background: rgba(7, 19, 31, 0.82);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.pixel-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.portrait-frame:hover .pixel-badge {
+  transform: translateY(-4px) rotate(2deg);
+  border-color: rgba(255, 177, 92, 0.3);
+}
+
+.portrait-card {
+  padding: 1.4rem;
+  border: 1px solid rgba(145, 196, 255, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.portrait-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 177, 92, 0.26);
+}
+
+.portrait-label {
+  margin: 0 0 0.8rem;
+  color: var(--accent-strong);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.portrait-card h2 {
+  margin: 0 0 0.8rem;
+  color: var(--text-main);
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.portrait-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-points {
+    grid-template-columns: 1fr;
   }
 }
 
-.profile-description{
-  max-width: 850px;
-  margin:auto;
+@media (max-width: 768px) {
+  .hero-panel {
+    padding: 1.35rem;
+    margin-top: 0;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.35rem, 11vw, 3.7rem);
+  }
+
+  .profile-image {
+    max-width: 260px;
+  }
+
+  .profile-photo {
+    max-width: 280px;
+  }
+
+  .pixel-badge {
+    width: 72px;
+    height: 72px;
+  }
+
+  .portrait-meta {
+    right: 0.85rem;
+    top: 0.85rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
 }

@@ -1,8 +1,19 @@
-<section class="section content">
-  <h1 class="title">Skills</h1>
-  <div class="columns is-centered">
-    <div class="column box content skill-box">
-      <app-skill-descriptor *ngFor="let skill of skills" [title]="skill.title" [level]="skill.level" [icon]="skill.icon"></app-skill-descriptor>
-    </div>
+<section id="stack" class="section-block">
+  <header class="section-heading">
+    <p class="section-kicker">Stack</p>
+    <h2>Tecnologías con las que trabajo</h2>
+    <p>
+      No todas pesan igual en cada proyecto, pero juntas explican bastante bien el tipo de perfil que tengo.
+    </p>
+  </header>
+
+  <div class="stack-grid">
+    <article class="stack-card box" *ngFor="let group of skillGroups">
+      <h3>{{ group.title }}</h3>
+      <p>{{ group.description }}</p>
+      <div class="chip-list">
+        <span class="chip" *ngFor="let item of group.items">{{ item }}</span>
+      </div>
+    </article>
   </div>
 </section>
