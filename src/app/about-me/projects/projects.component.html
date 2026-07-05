@@ -1,59 +1,130 @@
 <section id="proyectos" class="section-block projects-section">
   <header class="section-heading">
-    <p class="section-kicker">Proyecto destacado</p>
-    <h2>Brockey!</h2>
+    <p class="section-kicker">Proyectos destacados</p>
+    <h2>Cosas que he construido</h2>
     <p>
-      Un proyecto personal donde mezclo juego, código y ganas de sacar algo jugable.
+      Desde ideas personales hasta productos full-stack con despliegue real, me interesa construir cosas que se puedan usar.
     </p>
   </header>
 
-  <div class="project-layout">
-    <article class="featured-project box">
-      <div class="project-copy">
-        <p class="project-label">Brockey! · Dungeon crawler en desarrollo</p>
-        <h3>Un dungeon crawler con un brócoli por héroe.</h3>
-        <p>
-          Lo desarrollé con un amigo. Me gusta porque muestra que también le dedico tiempo a ideas propias y no solo al
-          trabajo del día a día.
-        </p>
+  <div class="project-stack">
+    <div class="project-layout">
+      <article class="featured-project box">
+        <div class="project-copy">
+          <p class="project-label">Brockey! · Dungeon crawler en desarrollo</p>
+          <h3>Un dungeon crawler con un brócoli por héroe.</h3>
+          <p>
+            Lo desarrollé con un amigo. Me gusta porque muestra que también le dedico tiempo a ideas propias y no solo al
+            trabajo del día a día.
+          </p>
 
-        <div class="project-tags">
-          <span>Unity</span>
-          <span>C#</span>
-          <span>Gameplay</span>
-          <span>Diseño visual</span>
+          <div class="project-tags">
+            <span>Unity</span>
+            <span>C#</span>
+            <span>Gameplay</span>
+            <span>Diseño visual</span>
+          </div>
         </div>
-      </div>
 
-      <figure class="project-shot">
-        <img src="../../../assets/brockey_shot.png" alt="Captura del videojuego Brockey">
-      </figure>
-    </article>
-
-    <aside class="project-side">
-      <article class="release-card box">
-        <p class="project-label">Build</p>
-        <h3>Probar alpha técnica</h3>
-        <p>
-          Es una build temprana para mostrar el proyecto, así que todavía hay cosas por pulir.
-        </p>
-        <a
-          class="download-link"
-          href="https://preshu-cdn.s3.amazonaws.com/brockey-mac.app.zip"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i class="iconoir-apple-mac"></i>
-          Descargar para macOS
-        </a>
-        <p class="release-note">Windows: próximamente.</p>
+        <figure class="project-shot">
+          <img src="../../../assets/brockey_shot.png" alt="Captura del videojuego Brockey">
+        </figure>
       </article>
 
-      <article class="release-card box">
-        <p class="project-label">Lo que demuestra</p>
-        <h3>Proyecto propio, en serio</h3>
-        <p>No me interesa solo sacar trabajo adelante; también me gusta construir cosas mías y llevarlas lo más lejos posible.</p>
+      <aside class="project-side">
+        <article class="release-card box">
+          <p class="project-label">Build</p>
+          <h3>Probar alpha técnica</h3>
+          <p>
+            Es una build temprana para mostrar el proyecto, así que todavía hay cosas por pulir.
+          </p>
+          <a
+            class="download-link"
+            href="https://preshu-cdn.s3.amazonaws.com/brockey-mac.app.zip"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="iconoir-apple-mac"></i>
+            Descargar para macOS
+          </a>
+          <p class="release-note">Windows: próximamente.</p>
+        </article>
+
+        <article class="release-card box">
+          <p class="project-label">Lo que demuestra</p>
+          <h3>Proyecto propio, en serio</h3>
+          <p>No me interesa solo sacar trabajo adelante; también me gusta construir cosas mías y llevarlas lo más lejos posible.</p>
+        </article>
+      </aside>
+    </div>
+
+    <div class="project-layout project-layout-separated">
+      <article class="featured-project box">
+        <div class="project-copy">
+          <p class="project-label">Dex Tracker · Pokedex TCG</p>
+          <h3>Una Pokedex full-stack para trackear tu colección física.</h3>
+          <p>
+            La construí para seguir la Pokedex nacional según las cartas TCG que tiene cada usuario, con búsqueda, filtros,
+            progreso, detalle por Pokemon y un índice local de cartas para no depender de una API externa en runtime.
+          </p>
+
+          <div class="project-tags">
+            <span>Next.js 15</span>
+            <span>NestJS</span>
+            <span>Prisma</span>
+            <span>MySQL</span>
+            <span>Kubernetes</span>
+          </div>
+        </div>
+
+        <figure class="project-shot project-shot-pokedex" aria-label="Vista resumida del proyecto Dex Tracker">
+          <div class="pokedex-preview">
+            <p class="pokedex-kicker">Pokedex Nacional TCG</p>
+            <h4>Dashboard + filtros + detalle + cartas</h4>
+            <div class="pokedex-stats">
+              <span>Auth JWT</span>
+              <span>REST API</span>
+              <span>Dataset local</span>
+            </div>
+            <div class="pokedex-progress">
+              <div class="pokedex-progress-bar"></div>
+            </div>
+            <div class="pokedex-grid">
+              <span class="pokedex-card-shot pokedex-card-shot-single">
+                <img src="/pokedex.png" alt="Icono del proyecto Dex Tracker Pokedex">
+              </span>
+            </div>
+          </div>
+        </figure>
       </article>
-    </aside>
+
+      <aside class="project-side">
+        <article class="release-card box">
+          <p class="project-label">Demo</p>
+          <h3>Disponible públicamente</h3>
+          <p>
+            Está desplegado y accesible en internet como una app completa, no solo como mockup local.
+          </p>
+          <a
+            class="download-link"
+            href="https://pokedex.preshu.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i class="iconoir-internet"></i>
+            Abrir pokedex.preshu.com
+          </a>
+        </article>
+
+        <article class="release-card box">
+          <p class="project-label">Lo que demuestra</p>
+          <h3>Producto e infraestructura</h3>
+          <p>
+            Aquí junto frontend, backend, base de datos, autenticación, generación de dataset y despliegue para sacar una
+            aplicación útil de punta a punta.
+          </p>
+        </article>
+      </aside>
+    </div>
   </div>
 </section>
