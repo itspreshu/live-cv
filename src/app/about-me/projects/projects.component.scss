@@ -14,8 +14,8 @@
 }
 
 .project-layout-separated {
-  padding-top: 1.2rem;
-  border-top: 1px solid rgba(145, 196, 255, 0.12);
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 210, 173, 0.1);
 }
 
 .featured-project {
@@ -23,13 +23,16 @@
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.95fr);
   gap: 1.4rem;
   align-items: center;
-  padding: 1.6rem;
+  padding: 1.7rem;
+  background:
+    radial-gradient(circle at top right, rgba(255, 159, 110, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.05)) !important;
   transition: transform 240ms ease, border-color 240ms ease;
 }
 
 .featured-project:hover {
   transform: translateY(-8px);
-  border-color: rgba(131, 226, 176, 0.26);
+  border-color: rgba(255, 159, 110, 0.26);
 }
 
 .project-copy {
@@ -70,7 +73,7 @@
 
 .project-tags span {
   padding: 0.55rem 0.8rem;
-  border: 1px solid rgba(145, 196, 255, 0.16);
+  border: 1px solid rgba(255, 210, 173, 0.14);
   border-radius: 999px;
   color: var(--text-main);
   font-size: 0.86rem;
@@ -79,13 +82,13 @@
 
 .project-tags span:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 177, 92, 0.28);
+  border-color: rgba(255, 209, 102, 0.28);
 }
 
 .project-shot {
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid rgba(145, 196, 255, 0.12);
+  border: 1px solid rgba(255, 210, 173, 0.12);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
   transform: rotate(-1.2deg);
   transition: transform 260ms ease;
@@ -104,8 +107,8 @@
   align-items: stretch;
   padding: 0.9rem;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 34%),
-    linear-gradient(145deg, rgba(16, 42, 51, 0.9), rgba(33, 90, 94, 0.9) 52%, rgba(92, 120, 134, 0.9));
+    radial-gradient(circle at top left, rgba(255, 209, 102, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(39, 27, 40, 0.94), rgba(31, 63, 68, 0.9) 52%, rgba(92, 120, 134, 0.84));
 }
 
 .pokedex-preview {
@@ -218,7 +221,7 @@
 
 .release-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 177, 92, 0.24);
+  border-color: rgba(255, 209, 102, 0.24);
   background: rgba(255, 255, 255, 0.04) !important;
 }
 
@@ -229,8 +232,8 @@
   margin-top: 1.2rem;
   padding: 0.9rem 1rem;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(131, 226, 176, 0.18), rgba(255, 177, 92, 0.18));
-  border: 1px solid rgba(131, 226, 176, 0.3);
+  background: linear-gradient(135deg, rgba(255, 159, 110, 0.18), rgba(139, 211, 221, 0.14));
+  border: 1px solid rgba(255, 159, 110, 0.26);
   color: var(--text-main);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }

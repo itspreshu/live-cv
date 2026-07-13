@@ -2,17 +2,20 @@
 @import url('../node_modules/iconoir/css/iconoir.css');
 
 :root {
-  --page-bg: #07131f;
-  --page-bg-soft: #0d2233;
-  --surface: rgba(12, 26, 39, 0.78);
-  --surface-strong: rgba(17, 36, 52, 0.96);
-  --surface-border: rgba(145, 196, 255, 0.18);
-  --text-main: #e9f3ff;
-  --text-soft: #9cb8cf;
-  --accent: #83e2b0;
-  --accent-strong: #ffb15c;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-  --bulma-primary: #83e2b0;
+  --page-bg: #130f17;
+  --page-bg-soft: #201826;
+  --surface: rgba(32, 22, 34, 0.7);
+  --surface-strong: rgba(37, 25, 40, 0.92);
+  --surface-alt: rgba(23, 32, 34, 0.72);
+  --surface-border: rgba(255, 210, 173, 0.14);
+  --text-main: #fff6ee;
+  --text-soft: #c7b4aa;
+  --text-muted: #9f8c82;
+  --accent: #ff9f6e;
+  --accent-strong: #ffd166;
+  --accent-cool: #8bd3dd;
+  --shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+  --bulma-primary: #ff9f6e;
 }
 
 @keyframes fade-up {
@@ -62,9 +65,10 @@
 
 html {
   background:
-    radial-gradient(circle at top left, rgba(131, 226, 176, 0.14), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 177, 92, 0.12), transparent 24%),
-    linear-gradient(160deg, #07131f 0%, #0d2233 48%, #10271f 100%);
+    radial-gradient(circle at 12% 14%, rgba(255, 159, 110, 0.22), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(139, 211, 221, 0.18), transparent 20%),
+    radial-gradient(circle at 50% 80%, rgba(255, 209, 102, 0.14), transparent 28%),
+    linear-gradient(145deg, #130f17 0%, #1e1521 38%, #10181f 100%);
   background-attachment: fixed;
   scroll-behavior: smooth;
 }
@@ -75,6 +79,7 @@ body {
   color: var(--text-main);
   font-family: 'Space Grotesk', sans-serif;
   background: transparent;
+  position: relative;
 }
 
 body::before {
@@ -83,22 +88,23 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.34;
+  mask-image: radial-gradient(circle at center, black 44%, transparent 100%);
 }
 
 body::after {
   content: '';
   position: fixed;
-  top: 10vh;
-  right: -10vw;
-  width: 42vw;
-  height: 42vw;
+  top: 8vh;
+  right: -8vw;
+  width: 40vw;
+  height: 40vw;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(131, 226, 176, 0.1), transparent 62%);
-  filter: blur(18px);
+  background: radial-gradient(circle, rgba(255, 159, 110, 0.16), transparent 62%);
+  filter: blur(20px);
   pointer-events: none;
   animation: drift-orb 18s ease-in-out infinite;
 }
@@ -116,9 +122,9 @@ img {
 .box {
   background: var(--surface) !important;
   border: 1px solid var(--surface-border);
-  border-radius: 28px !important;
+  border-radius: 30px !important;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
@@ -136,22 +142,38 @@ img {
 
 .section-kicker::before {
   content: '';
-  width: 2.5rem;
-  height: 1px;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
   background: currentColor;
+  box-shadow: 0 0 0 0.45rem rgba(255, 159, 110, 0.12);
 }
 
 .section-heading {
-  max-width: 680px;
-  margin: 0 auto 2.5rem;
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto 2.8rem;
+  padding-left: 1.4rem;
   text-align: left;
+}
+
+.section-heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  bottom: 0.2rem;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), rgba(139, 211, 221, 0.12));
 }
 
 .section-heading h2 {
   margin: 0 0 0.8rem;
   color: var(--text-main);
   font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
 }
 
 .section-heading p {
@@ -159,6 +181,13 @@ img {
   color: var(--text-soft);
   font-size: 1.02rem;
   line-height: 1.7;
+}
+
+.section-heading h2 em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-strong);
 }
 
 @supports (animation-timeline: view()) {

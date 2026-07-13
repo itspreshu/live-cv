@@ -1,7 +1,7 @@
 <section id="trayectoria" class="highlights-section">
   <header class="section-heading">
     <p class="section-kicker">Trayectoria</p>
-    <h2>Resumen profesional</h2>
+    <h2>Resumen <em>profesional</em></h2>
     <p>
       Estos puntos resumen mejor mi perfil que una lista larga de tecnologías: experiencia, recorrido y trabajo cómodo
       entre varias capas.
@@ -10,13 +10,20 @@
 
   <div class="stats-strip">
     <article class="stat-card box" *ngFor="let stat of stats">
+      <span class="stat-icon" aria-hidden="true">
+        <i class="iconoir-{{ stat.icon }}"></i>
+      </span>
+      <p class="stat-label">{{ stat.label }}</p>
       <h3>{{ stat.value }}</h3>
-      <p>{{ stat.label }}</p>
     </article>
   </div>
 
   <div class="points-grid">
     <article class="point-card box" *ngFor="let point of points">
+      <i class="point-watermark iconoir-{{ point.ghostIcon }}" aria-hidden="true"></i>
+      <span class="point-icon" aria-hidden="true">
+        <i class="iconoir-{{ point.icon }}"></i>
+      </span>
       <h3>{{ point.title }}</h3>
       <p>{{ point.description }}</p>
     </article>
