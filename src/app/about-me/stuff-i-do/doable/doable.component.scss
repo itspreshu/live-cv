@@ -3,19 +3,34 @@
 }
 
 .capability-card {
+  position: relative;
   height: 100%;
   min-height: 260px;
   padding: 1.5rem;
   text-align: left;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.05)) !important;
+  overflow: hidden;
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
 .card-icon {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   margin-bottom: 1.2rem;
   color: var(--accent-strong);
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.ghost-icon {
+  position: absolute;
+  right: -0.35rem;
+  bottom: -0.6rem;
+  color: rgba(255, 255, 255, 0.05);
+  font-size: 7rem;
+  transform: rotate(-10deg);
+  pointer-events: none;
   transition: transform 220ms ease, color 220ms ease;
 }
 
@@ -30,7 +45,14 @@
   color: var(--accent-cool);
 }
 
+.capability-card:hover .ghost-icon {
+  transform: rotate(-6deg) scale(1.04);
+  color: rgba(139, 211, 221, 0.08);
+}
+
 h3 {
+  position: relative;
+  z-index: 1;
   margin: 0 0 0.8rem;
   color: var(--text-main);
   font-size: 1.4rem;
@@ -38,6 +60,8 @@ h3 {
 }
 
 p {
+  position: relative;
+  z-index: 1;
   margin: 0;
   color: var(--text-soft);
   line-height: 1.75;

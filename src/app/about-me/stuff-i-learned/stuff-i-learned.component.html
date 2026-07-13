@@ -9,7 +9,13 @@
 
   <div class="stack-grid">
     <article class="stack-card box" *ngFor="let group of skillGroups">
-      <h3>{{ group.title }}</h3>
+      <i class="stack-watermark iconoir-{{ group.ghostIcon }}" aria-hidden="true"></i>
+      <div class="stack-card-head">
+        <span class="stack-icon" aria-hidden="true">
+          <i class="iconoir-{{ group.icon }}"></i>
+        </span>
+        <h3>{{ group.title }}</h3>
+      </div>
       <p>{{ group.description }}</p>
       <div class="chip-list">
         <span class="chip" *ngFor="let item of group.items">{{ item }}</span>
