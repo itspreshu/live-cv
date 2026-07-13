@@ -3,13 +3,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  width: min(1180px, calc(100vw - 2rem));
+  width: min(1220px, calc(100vw - 2rem));
   margin: 1.4rem auto 0;
   padding: 1rem 1.2rem;
-  border: 1px solid rgba(145, 196, 255, 0.14);
-  border-radius: 24px;
-  background: rgba(7, 19, 31, 0.62);
+  border: 1px solid rgba(255, 210, 173, 0.12);
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(28, 20, 30, 0.8), rgba(17, 23, 31, 0.75));
   backdrop-filter: blur(18px);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.24);
   animation: fade-up 700ms ease both;
 }
 
@@ -25,8 +26,8 @@
   width: 3rem;
   height: 3rem;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(131, 226, 176, 0.2), rgba(255, 177, 92, 0.2));
-  border: 1px solid rgba(131, 226, 176, 0.24);
+  background: linear-gradient(135deg, rgba(255, 159, 110, 0.28), rgba(139, 211, 221, 0.18));
+  border: 1px solid rgba(255, 209, 102, 0.24);
   color: var(--text-main);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.95rem;
@@ -47,7 +48,7 @@
 
 .brand-copy small {
   color: var(--text-soft);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -90,6 +91,27 @@
   transform: scaleX(1);
 }
 
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 209, 102, 0.24);
+  background: linear-gradient(135deg, rgba(255, 159, 110, 0.16), rgba(139, 211, 221, 0.12));
+  color: var(--text-main);
+  font-size: 0.88rem;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 209, 102, 0.4);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 768px) {
   .site-nav {
     flex-direction: column;
@@ -100,5 +122,9 @@
 
   .nav-links {
     justify-content: flex-start;
+  }
+
+  .nav-cta {
+    width: 100%;
   }
 }

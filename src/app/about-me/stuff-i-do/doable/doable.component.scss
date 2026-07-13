@@ -7,6 +7,8 @@
   min-height: 260px;
   padding: 1.5rem;
   text-align: left;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.05)) !important;
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
@@ -19,13 +21,13 @@
 
 .capability-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(255, 177, 92, 0.28);
+  border-color: rgba(255, 209, 102, 0.28);
   background: rgba(255, 255, 255, 0.04) !important;
 }
 
 .capability-card:hover .card-icon {
   transform: translateY(-4px) scale(1.04);
-  color: var(--accent);
+  color: var(--accent-cool);
 }
 
 h3 {

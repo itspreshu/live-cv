@@ -12,14 +12,14 @@
 .stat-card,
 .point-card {
   height: 100%;
-  padding: 1.4rem;
+  padding: 1.5rem;
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
 .stat-card:hover,
 .point-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(131, 226, 176, 0.24);
+  border-color: rgba(255, 159, 110, 0.24);
   background: rgba(255, 255, 255, 0.04) !important;
 }
 
@@ -29,9 +29,19 @@
   color: var(--text-main);
 }
 
+.stat-label {
+  margin: 0 0 1rem;
+  color: var(--text-muted) !important;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .stat-card h3 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   line-height: 1;
+  margin-bottom: 0;
 }
 
 .stat-card p,
@@ -50,6 +60,11 @@
 .point-card h3 {
   font-size: 1.25rem;
   line-height: 1.2;
+}
+
+.point-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.045)) !important;
 }
 
 @media (max-width: 960px) {
