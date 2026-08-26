@@ -1,15 +1,1 @@
-.section-block {
-  margin-bottom: 3.5rem;
-}
-
-.capability-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-@media (max-width: 960px) {
-  .capability-grid {
-    grid-template-columns: 1fr;
-  }
-}
+.section-block{margin-bottom:6rem}.capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}.skill:nth-child(2) ::ng-deep .capability-card{background:linear-gradient(145deg,rgba(113,167,255,.14),var(--surface))!important}.skill:nth-child(3) ::ng-deep .capability-card{background:linear-gradient(145deg,rgba(170,134,255,.16),var(--surface))!important}.skill:nth-child(3) ::ng-deep .main-icon{color:var(--violet)}@media(max-width:700px){.capability-grid{grid-template-columns:1fr}}
